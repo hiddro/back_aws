@@ -1,4 +1,9 @@
 com\javatechie\s3\controller\StorageController.class
-com\javatechie\s3\FileStorageServiceApplication.class
 com\javatechie\s3\service\StorageService.class
+com\javatechie\s3\repository\PorcinoRepository.class
+com\javatechie\s3\service\impl\PorcinoServiceImpl.class
 com\javatechie\s3\config\StorageConfig.class
+com\javatechie\s3\FileStorageServiceApplication.class
+com\javatechie\s3\service\IPorcinoService.class
+com\javatechie\s3\controller\PorcinoController.class
+com\javatechie\s3\entity\Porcino.class

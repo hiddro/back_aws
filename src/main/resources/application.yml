@@ -1,8 +1,8 @@
 cloud:
   aws:
     credentials:
-      access-key:
-      secret-key:
+      access-key: { ACA }
+      secret-key: { ACA }
     region:
       static: us-east-1
     stack:
@@ -20,7 +20,7 @@ spring:
       max-file-size: 5MB
       max-request-size: 10MB
   datasource:
-    url: jdbc:mysql://porcinosdb.cnyzaqfgqvkn.us-east-1.rds.amazonaws.com:3306/porcinosaws
+    url: jdbc:mysql://porcinosdb.cvdmtpiixomp.us-east-2.rds.amazonaws.com:3306/porcinosaws
     username: root
     password: secretsecret
   jpa:
