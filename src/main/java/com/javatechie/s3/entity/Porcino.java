@@ -35,7 +35,7 @@ public class Porcino implements Serializable {
     @Column(name = "url")
     private String url;
 
-    @NotNull
+//    @NotNull
     @Column(name = "fecha_compra")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="yyyy-MM-dd")

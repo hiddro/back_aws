@@ -19,12 +19,20 @@ public class PorcinoController {
     private IPorcinoService porcinoService;
 
     @PostMapping
-    public Porcino savePorcino(@RequestParam(value = "file") MultipartFile file, @RequestParam("porcino") String porcino) {
+    public Porcino savePorcino(@RequestParam(value = "file") MultipartFile file,
+                               @RequestParam("name") String name,
+                               @RequestParam("genero") String genero,
+                               @RequestParam("raza") String raza) {
 
-        Gson gson = new Gson();
-        Porcino porky = gson.fromJson(porcino, Porcino.class);
+//        Gson gson = new Gson();
+//        Porcino porky = gson.fromJson(porcino, Porcino.class);
+        Porcino porcino = new Porcino();
+        porcino.setNombre(name);
+        porcino.setGenero(genero);
+        porcino.setRaza(raza);
+        porcino.setFechaCompra(new Date());
 
-        return porcinoService.createPorcino(file, porky);
+        return porcinoService.createPorcino(file, porcino);
     }
 
     @GetMapping

@@ -93,7 +93,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>back_aws</finalName>
+		<finalName>back_aws_final</finalName>
 	</build>
 
 </project>

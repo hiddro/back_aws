@@ -6,9 +6,11 @@ import com.javatechie.s3.service.IPorcinoService;
 import com.javatechie.s3.service.StorageService;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -20,10 +22,15 @@ public class PorcinoServiceImpl implements IPorcinoService {
     @Autowired
     private StorageService storageService;
 
+    @Value("${application.bucket.name}")
+    private String bucketName;
+
     @Override
     public Porcino createPorcino(MultipartFile file, Porcino porcino) {
+
         String url = storageService.uploadFile(file);
-        porcino.setUrl(url);
+        final String sUrl = "https://" + bucketName + ".s3.amazonaws.com/" + url;
+        porcino.setUrl(sUrl);
         return porcinoRepository.save(porcino);
     }
 
