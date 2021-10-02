@@ -1,8 +1,8 @@
 cloud:
   aws:
     credentials:
-      access-key: AKIAVNXHYBWVLBFV7IVT
-      secret-key: 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
+      access-key: AKIAXO526BU6TDOEJW7Z
+      secret-key: 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
     region:
       static: us-east-1
     stack:
@@ -10,7 +10,7 @@ cloud:
 
 application:
   bucket:
-    name: awsangelstorages
+    name: angelstorages
 
 spring:
   servlet:
@@ -19,18 +19,18 @@ spring:
       file-size-threshold: 2MB
       max-file-size: 5MB
       max-request-size: 10MB
-  datasource:
-    url: jdbc:mysql://usersdb.cnyzaqfgqvkn.us-east-1.rds.amazonaws.com:3306/usersaws
-    username: root
-    password: secretsecret
-  jpa:
-    show-sql: true
-    database-platform: org.hibernate.dialect.MySQL5Dialect
-    hibernate:
-      ddl-auto: create
-    properties:
-      max_allowed_packet: 2000
+#  datasource:
+#    url: jdbc:mysql://usersdb.cnyzaqfgqvkn.us-east-1.rds.amazonaws.com:3306/usersaws
+#    username: root
+#    password: secretsecret
+#  jpa:
+#    show-sql: true
+#    database-platform: org.hibernate.dialect.MySQL5Dialect
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      max_allowed_packet: 2000
 
 server:
-  port: 9090
+  port: 8080
 
