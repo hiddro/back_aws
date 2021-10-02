@@ -1,11 +1,13 @@
 package com.javatechie.s3.controller;
 
+import com.google.gson.Gson;
 import com.javatechie.s3.entity.Porcino;
 import com.javatechie.s3.repository.PorcinoRepository;
 import com.javatechie.s3.service.IPorcinoService;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
 
@@ -17,8 +19,12 @@ public class PorcinoController {
     private IPorcinoService porcinoService;
 
     @PostMapping
-    public Porcino savePorcino(@RequestBody Porcino user) {
-        return porcinoService.createPorcino(user);
+    public Porcino savePorcino(@RequestParam(value = "file") MultipartFile file, @RequestParam("porcino") String porcino) {
+
+        Gson gson = new Gson();
+        Porcino porky = gson.fromJson(porcino, Porcino.class);
+
+        return porcinoService.createPorcino(file, porky);
     }
 
     @GetMapping
